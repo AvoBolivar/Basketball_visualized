@@ -1,0 +1,22 @@
+{% extends "base.html" %} {% block title %}Names{% endblock %} 
+{%block content%}
+<h3>This is the names page</h3>
+    <form method="POST">
+        {% for letter_index in range(amnt) %}
+        <br>
+        <hr>
+        <br>
+            <h5>{{l[letter_index]}}</h5><br>
+            {% for player in p[letter_index] %}
+            <div class="row">
+                <div class="col-6 text-center">
+                <input type="checkbox" id="user" name={{player}} value={{player}}/>  {{p[letter_index][player]}}
+                </div>
+            </div>
+            {% endfor %}
+        {% endfor %}
+
+        <button type="submit" class="btn btn-primary">Next</button>
+    </form>
+
+{% endblock %}

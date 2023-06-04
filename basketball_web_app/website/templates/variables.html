@@ -1,0 +1,16 @@
+{% extends "base.html" %} {% block title %}Names{% endblock %} 
+{%block content%}
+<br   />
+<form method="POST">
+    <h5>Variables</h5><br>
+    {% for i in index %}
+    <div class="row">
+        <div class="col-6 text-center">
+        <input type="checkbox" id="user" name={{i}} value={{i}}/>  {{labels[i]}}
+        </div>
+    </div>
+    {% endfor %}
+    <button type="submit" class="btn btn-primary">Next</button>
+    <br>
+</form>
+{% endblock %}
